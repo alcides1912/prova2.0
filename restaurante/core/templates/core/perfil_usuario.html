@@ -1,0 +1,12 @@
+<!-- perfil_usuario.html -->
+
+{% block content %}
+    <h2>Perfil do Usuário</h2>
+    <p>Nome de Usuário: {{ user.username }}</p>
+    <p>Nome: {{ user.first_name }}</p>
+    <p>Sobrenome: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Admin: {{ user.is_staff }}</p>
+    <p>Superuser: {{ user.is_superuser }}</p>
+    <p>Ativo: {{ user.is_active }}</p>
+{% endblock %}

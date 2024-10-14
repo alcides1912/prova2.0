@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% load static %} 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Faça seu login{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<style>
+    .oi{
+        margin-bottom: 0%;
+        width: 10%;
+        text-align: center;
+    }
+    .ai{
+        padding-left: 95%;
+        background-color: #777777;  
+        width: 30%; 
+        white-space: 0px;
+        text-align: right;
+    }
+    .menu-button1 {
+    display: inline-block; /* Exibir como bloco em linha */
+    margin-left: 20px;
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background: #ffffff;/* Cor de fundo do botão */
+    color: #000000; /* Cor do texto do botão */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas do botão */
+    transition: background 0.3s, transform 0.3s; /* Transição suave de cor e movimento */
+    
+    z-index: 1; /* Coloca acima do fundo */
+}
+
+.menu-button1:hover {
+    background: #d9e7f1; /* Cor do botão ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de movimento ao passar o mouse */
+}
+
+</style>
+
+<body>
+    <header>
+        <form align="right">
+                {% if user.is_authenticated%}
+                <h3>Olá, {{ user.username}}!
+                    <a href="{% url 'logout' %}" class="menu-button1"  >
+                        Sair
+                    </a>
+                </h3>
+            
+            {% else %}
+            <a href="{% url 'login' %}" class="menu-button1"  >
+                Acessar
+            </a>
+            {%endif %}
+        </form>
+    </header>
+
+        {% block content %}
+        {% endblock %}
+</body>
+</html>

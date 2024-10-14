@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% block title %}Criar Mesa{% endblock %}
+{% load static %}
+{% block content %}
+<h1>Criar Mesa</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="button">Salvar</button>
+</form>
+<a href="{% url 'listar_mesas' %}" class="button">Voltar</a>
+{% endblock %}

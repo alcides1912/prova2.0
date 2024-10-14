@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        .logo {
+            width: 150px;
+            /* Ajuste o tamanho conforme necessário */
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #3498db;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<header class="report-header">
+    <body class="report-header">
+        <div class="header-content">
+            <h1>Restaurante Maydes</h1>
+            <p>Data: {{ data_atual }}</p>
+                
+        </div>
+        <h2>Relatório de Reservas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Mesa Reservada</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Número de Pessoas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reserva in reservas %}
+                <tr>
+                    <td>{{ reserva.cliente.user }}</td>
+                    <td>{{ reserva.mesa.id }}</td>
+                    <td>{{ reserva.data_reserva }}</td>
+                    <td>{{ reserva.hora_reserva }}</td>
+                    <td>{{ reserva.num_pessoas }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+    
+</header>
+</html>

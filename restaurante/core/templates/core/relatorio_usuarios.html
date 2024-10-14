@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        table {
+            width: 10%;
+            border-collapse: collapse;
+            justify-content: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .report-header {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 150px;
+            /* Ajuste o tamanho conforme necessário */
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #3498db;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<header class="report-header">
+    <div class="header-content">
+        <h1>Restaurante Maydes</h1>
+        <p>Data: {{ data_atual }}</p>
+
+    </div>
+
+    <body>
+        <h2>Relatório de Usuários</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome de Usuário</th>
+                    <th>Email</th>
+                    <th>Status de Superusuário</th>
+                    <th>Situação da Equipe</th>
+                    <th>Data de Criação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.is_superuser }}</td>
+                    <td>{{ usuario.is_staff }}</td>
+                    <td>{{ usuario.date_joined }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</header>
+
+</html>

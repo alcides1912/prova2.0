@@ -1,0 +1,79 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    height: 180%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container centralizado e pequeno */
+.form-container {
+    background-color: #ffffff;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Título do formulário */
+h2 {
+    color: #4d7687;
+    font-size: 24px;
+}
+
+/* Estilo dos inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #508798;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff9f4;
+}
+
+form input:focus {
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Botão de submit */
+form button {
+    background-color: #508798;
+    color: #ffffff;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #165569;
+}
+
+/* Link de cancelar */
+.cancelar-link {
+    text-decoration: none;
+    background-color: #508798;
+    color: #ffffff;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cancelar-link:hover {
+    background-color: #165569;
+}
